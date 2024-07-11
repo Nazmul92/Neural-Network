@@ -68,6 +68,6 @@ pip install -r requirements.txt
 ## Running the project
 * Clone the repository
 ```python
-git clone https://github.com/username/SparseNet.git
+git clone https://github.com/Nazmul92/Neural-Network.git
 cd SparseNet
 ```
