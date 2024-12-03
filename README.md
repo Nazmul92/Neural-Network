@@ -1,42 +1,34 @@
-# SparseNet: Implementing and Pruning a Sparse Neural Network
+# SparseNet: Development and Optimization of a Sparse Neural Network
 ## Project Overview
-SparseNet is a neural network model that integrates sparsity into its architecture to reduce the number of active weights, aiming to optimize performance and efficiency. This project involves defining and training the SparseNet model using PyTorch and incorporating various pruning techniques to enhance model performance and reduce computational complexity.
+This project focuses on building and training SparseNet using PyTorch, leveraging pruning techniques such as magnitude, random, and structured pruning to minimize computational complexity without compromising accuracy. By visualizing sparsity patterns and performance metrics, the project demonstrates how SparseNet achieves a balance between model simplicity and effectiveness, making it a valuable solution for resource-constrained machine learning applications.
 
-
-## Dataset
+## 1. Dataset (HAM10000 image dataset)
 - **Training Data:** Located in `data/train/`
 - **Testing Data:** Located in `data/test/`
-- Dataset consists of images with dimensions (64, 64, 3).
+- Input image size: 64x64x3
 
-## Model Architecture
-### LeNet
+## 2. Model Architecture
+### 2.1. LeNet
 The LeNet model is a classic convolutional neural network with the following layers:
 - 2 convolutional layers with ReLU activations and max-pooling
 - 3 fully connected layers
 
-### SparseNet
+### 2.2. SparseNet
 SparseNet is an extension of LeNet where convolutional and fully connected layers are replaced by sparse versions. It uses sparse masks to enforce sparsity during training.
 
-## Pruning Techniques
-### Magnitude Pruning
-Weights below a certain magnitude threshold are set to zero.
+## 3. Pruning Techniques
+- **Magnitude Pruning:** Removes weights below a threshold.
+- **Random Pruning:** Randomly prunes weights.
+- **Structured Pruning:** Prunes entire filters or channels.
 
-### Random Pruning
-Randomly selects weights to prune based on a pruning factor.
+## 4. Training and Evaluation
+- **Optimizer:** Adam
+- **Loss Function:** CrossEntropyLoss
+- **Metrics:** Accuracy, sparsity, and test loss curves
+- **Visualization:** Sparsity heatmaps, filter weight visualizations, and layer-wise sparsity.
 
-### Structured Pruning
-Prunes entire structures such as filters or channels based on a pruning factor.
 
-## Training
-Training involves using the Adam optimizer and CrossEntropyLoss. Pruning is performed after each training epoch.
-
-## Evaluation
-Evaluation includes calculating the accuracy on the test dataset and visualizing the sparsity of the model.
-
-## Visualization
-Visualizations include loss curves, sparsity heatmaps, and bar charts of zero weights per layer.
-
-## Pruning Analysis
+## 5. Pruning Analysis
 Pruning analysis involves interpreting the sparsity of each layer and visualizing the number of zero weights.
 
 
@@ -51,9 +43,12 @@ def interpret_sparsity(model):
 
 
 ## Results
-* Train and test loss curves for different rounds of training
-* Accuracy after pruning
-* Visualization of filter weights and sparsity
+- Visualized the trade-off between sparsity and accuracy.
+- Demonstrated the impact of different pruning techniques on model performance.
+
+## Key Takeaways
+- SparseNet reduces computational load while preserving accuracy.
+- Pruning enhances model efficiency without significant performance degradation.
 
 ## Requirements
 * Python 3.8+
