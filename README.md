@@ -1,4 +1,4 @@
-# SparseNet: Development and Optimization of a Sparse Neural Network
+# SparseNet: Development and Optimization of a Sparse Convolutional Neural Network
 ## Project Overview
 This project focuses on building and training SparseNet using PyTorch, leveraging pruning techniques such as magnitude, random, and structured pruning to minimize computational complexity without compromising accuracy. By visualizing sparsity patterns and performance metrics, the project demonstrates how SparseNet achieves a balance between model simplicity and effectiveness, making it a valuable solution for resource-constrained machine learning applications.
 
